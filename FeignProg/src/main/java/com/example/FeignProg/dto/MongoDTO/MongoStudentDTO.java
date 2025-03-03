@@ -1,7 +1,4 @@
 package com.example.FeignProg.dto.MongoDTO;
-
-import com.example.FeignProg.dto.MongoDTO.StudentCourse;
-
 import java.util.Date;
 import java.util.List;
 

@@ -1,7 +1,6 @@
 package com.example.FeignProg.controller.MongoController;
 
 import com.example.FeignProg.dto.MongoDTO.MongoStudentDTO;
-import com.example.FeignProg.dto.MongoDTO.StudentDTO;
 import com.example.FeignProg.service.MongoService.StudentService;
 import com.example.FeignProg.utils.ApiResponse;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,21 +17,21 @@ public class MongoStudentController {
 
     @GetMapping(value = "/student/getAll")
     public ResponseEntity<ApiResponse<List<MongoStudentDTO>>> getAllStuds() {
-        return ResponseEntity.ok(Objects.requireNonNull(studentService.findAll().getBody()));
+        return studentService.findAll();
     }
 
     @PostMapping(value = "/student/saveStudent")
-    public ResponseEntity<ApiResponse<MongoStudentDTO>> saveTheStudent(@RequestBody StudentDTO studentDTO) {
-        return ResponseEntity.ok(Objects.requireNonNull(studentService.saveStudent(studentDTO).getBody()));
+    public ResponseEntity<ApiResponse<MongoStudentDTO>> saveTheStudent(@RequestBody MongoStudentDTO studentDTO) {
+        return studentService.saveStudent(studentDTO);
     }
 
     @GetMapping(value = "/student/getOne")
     public ResponseEntity<ApiResponse<MongoStudentDTO>> getOneStudent(@RequestParam boolean flag, @RequestParam String id) {
-        return ResponseEntity.ok(Objects.requireNonNull(studentService.findOne(flag, id).getBody()));
+        return studentService.findOne(flag, id);
     }
 
     @DeleteMapping(value = "/deleteOne/")
     public ResponseEntity<ApiResponse<Boolean>> deleteOneStudent(@RequestParam boolean flag, @RequestParam String id) {
-        return ResponseEntity.ok(Objects.requireNonNull(studentService.deleteStudent(flag, id).getBody()));
+        return studentService.deleteStudent(flag, id);
     }
 }

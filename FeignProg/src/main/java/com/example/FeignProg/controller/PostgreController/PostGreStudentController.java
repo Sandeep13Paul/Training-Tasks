@@ -30,19 +30,19 @@ public class PostGreStudentController {
         return studentService.deletePostStudent(id);
     }
 
-    @PostMapping("/register")
-    public ResponseEntity<ApiResponse<Boolean>> registerToCourse(@RequestParam Long studentId, @RequestParam Long courseId) {
-        return studentService.registerPostStud(studentId, courseId);
-    }
+//    @PostMapping("/register")
+//    public ResponseEntity<ApiResponse<Boolean>> registerToCourse(@RequestParam Long studentId, @RequestParam Long courseId) {
+//        return studentService.registerPostStud(studentId, courseId);
+//    }
 
-    @DeleteMapping("/remove")
-    public ResponseEntity<ApiResponse<Boolean>> withdrawFromCourse(@RequestParam Long studentId, @RequestParam Long courseId) {
-        return studentService.withdrawPostStudent(studentId, courseId);
-    }
+//    @DeleteMapping("/remove")
+//    public ResponseEntity<ApiResponse<Boolean>> withdrawFromCourse(@RequestParam Long studentId, @RequestParam Long courseId) {
+//        return studentService.withdrawPostStudent(studentId, courseId);
+//    }
 
-    @GetMapping("/getProg")
-    public ResponseEntity<ApiResponse<CourseStatus>> findProgress(@RequestParam Long studentId, @RequestParam Long courseId) {
-        return studentService.findPostProgress(studentId, courseId);
-    }
+//    @GetMapping("/getProg")
+//    public ResponseEntity<ApiResponse<CourseStatus>> findProgress(@RequestParam Long studentId, @RequestParam Long courseId) {
+//        return studentService.findPostProgress(studentId, courseId);
+//    }
 
 }
